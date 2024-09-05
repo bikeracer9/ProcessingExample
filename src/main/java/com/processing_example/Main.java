@@ -1,5 +1,10 @@
 package com.processing_example;
-
+/*
+ * Prescott Lau
+ * "Hello World, Processing with Java in VSCode" Assignment
+ * September 5th, 2024
+ * This project uses Java to code and create a drawing in Processing.
+ */
 import processing.core.PApplet;
 
 public class Main extends PApplet {
