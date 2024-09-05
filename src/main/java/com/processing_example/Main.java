@@ -2,7 +2,7 @@
  * Prescott Lau
  * "Hello World, Processing with Java in VSCode" Assignment
  * September 5th, 2024
- * This project imports Processing into VSCode and uses Java to code a drawing of a sunflower.
+ * This project imports Processing into VSCode and uses Java to code a drawing of a house.
  * 
  * Click multiple times on the screen to change the background color to visualize a sunset.
  */
@@ -26,91 +26,66 @@ public class Main extends PApplet {
     int counter = 0; //counter to see which color for the background to use. 
     int backColor = color(29, 144, 245); //blue, sky background color
 
+    /*
+     * This is the setup function
+     */
     public void setup()
     {
        
     } 
 
+    /*
+    * This is the main draw function.
+    */
     public void draw()
     {
-        //backgroundDraw();
-        flower();
+        backgroundDraw();
+        house();
     }
     
     /*
-     * This method creates the flower.
+     * This method has the bulk of the code to create a house.
      */
-    public void flower()
+    public void house()
     {
         noStroke();
 
-        fill(11, 133, 59); //green fill
-        beginShape(); //This shape is the right leaf of the flower.
-        curveVertex(413, 543);
-        curveVertex(425, 550);
-        curveVertex(474, 508);
-        curveVertex(557, 471);
-        curveVertex(617, 491);
-        curveVertex(608,536);
-        curveVertex(550,594);
-        curveVertex(483,645);
-        curveVertex(422,690);
-        curveVertex(483,645);
-        endShape();
+        fill(35, 156, 14); //green color for the grass
+        rect(0, 550, 800, 400); //grass
 
-        fill(14,230,100); //green
-        rect(350, 450, 75, 400); //base of the flower
+        stroke(0);
+        strokeWeight(2);
+        fill(186, 117, 13); //brown color for the house
+        rect(270, 275, 300, 300); //body of the house
 
-        // fill(108, 235, 158); //lighter green
-        // rect(355, 455, 25, 400, 20); //highlight of the base of the flower
+        fill(255); //white color for the house's roof
+        triangle(180, 280, 425, 100, 680, 280); //house roof
 
-        fill(3, 84, 35); //darker green
-        rect(390, 485, 25, 375, 25); //shadow of the base of the flower
-        
-        //--
-        fill(71, 42, 6); //dark brown color
-        ellipse(395, 250, 250, 250); //dark brown big circle, in the very back
+        fill(255,0,0); //red color for the door
+        rect(370, 375, 100, 200); //red door
 
-        fill(140, 78, 0); //lighter brown color
-        ellipse(395, 250, 200, 200); //lighter brown middle circle, in the middle
-
-        fill(71, 42, 6); //dark brown color
-        ellipse(395, 250, 150, 150); //dark brown small middle circle 
-
-        fill(51, 29, 1); //darker brown color
-        ellipse(395, 250, 100, 100); //dark brown smaller middle circle (face of the sunflower)
-
-
-        // beginShape();
-        // curveVertex(483,645);
-        // endShape();
+        fill(0); //black
+        circle(445,470,15); //door handle
     }
 
     /*
      * This is the mouseClicked method. 
-     * I originally used this method, when I was trying to create the leaf and the flower petals.
-     * So I used the line that is commented out with a "1" next to it to run the code and, when
-     * clicking the mouse on the screen, it would tell me what the X and Y coordinates are, which
-     * I then used to create the shapes - wherever you see "beginShape." 
      * 
-     * I then have now used this function to change the background color, 
-     * whenever you click on the screen.
+     * Whenever you click on the screen, the background color changes to simulate a sunset.
      */
     public void mouseClicked()
     {
-        println("x = " + mouseX + " y = " + mouseY); //1
         counter++;
 
         if(counter >= 6)
         {
             counter = 0;
         }
-         
     }
 
     /*
      * This method changes the background of the screen, which changes depending on the "counter"
-     * variable which changes when you click the mouse. 
+     * variable which changes when you click the mouse.  
      */
     public void backgroundDraw()
     {
